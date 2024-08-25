@@ -42,7 +42,7 @@ if [ $IS_SPM = true ]; then
     OBJECT_FILE="$TARGET_PATH"
   else
     TARGET=$(echo $TARGET | sed  's/\.[^.]*$//')
-    OBJECT_FILE=$(find $BUILD_PATH -name "$TARGET" | tail -n1)
+    OBJECT_FILE=$(find $BUILD_PATH -name "$TARGET" | head -n1)
   fi
 else
   TARGET=$(echo $TARGET | sed  's/\.[^.]*$//')
